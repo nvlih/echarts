@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../static/js/jquery-easyui-1.4.3/themes/metro/easyui.css">
+    <link rel="stylesheet" type="text/css" href="../static/js/jquery-easyui-1.4.3/themes/icon.css">
+
+    <script src="../static/js/jquery-easyui-1.4.3/jquery.min.js"></script>
+    <script src="../static/js/jquery-easyui-1.4.3/jquery.easyui.min.js"></script>
+    <script src="../static/js/echarts.min.js"></script>
+    <script src="../static/js/vintage.js"></script>
+    <script src="../static/js/javascript/jsonbargraph.js"></script>
+    <script src="../static/js/javascript/jsonlinegraph.js"></script>
+    <title>three</title>
+</head>
+<!--1. 在整个页面创建布局面板-->
+<body class="easyui-layout">
+<div data-options="region:'north',border:false" style="height:60px;background:#B3DFDA;padding:10px">north region</div>
+<div data-options="region:'west',split:true,title:'West'" style="width:150px;padding:10px;">
+    <ul id="mytree" name="mytree" class="easyui-tree" data-options="url:'getthree',method:'get',animate:true,dnd:true"></ul>
+</div>
+<div data-options="region:'south',border:false" style="height:50px;background:#A9FACD;padding:10px;">south region</div>
+<div data-options="region:'center',title:'Center'">
+    <div id="main" name="main" style="height:400px"></div>
+</div>
+</body>
+</html>
+
+<script type="text/javascript">
+
+    $('#mytree').tree({
+        onClick: function(node){
+            $.ajax({
+                url: node.url,
+                type:'post',
+                success: function(d){
+                    var str= JSON.parse(d);
+                    encodeURI(str,"utf-8");
+                    console.log(str);
+                    if(str.id == "bar"){
+                        var categories = str.categories;
+                        var values = str.values;
+                        drewbargraph(categories,values);
+                    }else if(str.id == "line"){
+                        var data = str.data;
+                        var zong = str.zong;
+                        drewlinegraph(zong,data);
+                    }
+
+                }});
+        }
+    });
+
+    function drew(s){
+        var myChart = echarts.init(document.getElementById('main'));
+        myChart.showLoading({text: '正在努力的读取数据中...'});
+        myChart.setOption(s);
+        myChart.hideLoading();
+    }
+
+</script>

@@ -1,0 +1,15 @@
+[{
+  "id":1,
+  "text":"report",
+  "children":[{
+    "text":"bargraph",
+    "url":"bargraph"
+  },{
+    "text":"linegraph",
+    "url":"linegraph"
+  },{
+    "text":"piegraph",
+    "url":"piegraph"
+  }]
+}
+]

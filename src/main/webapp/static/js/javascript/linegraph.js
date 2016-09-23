@@ -1,16 +1,15 @@
-<<<<<<< HEAD
 function drewlinegraph() {
     var myChart = echarts.init(document.getElementById('main'));
     option = {
         title: {
-            text: '未来一周气温变化',
-            subtext: '纯属虚构'
+            text: '鏈潵涓�鍛ㄦ皵娓╁彉鍖�',
+            subtext: '绾睘铏氭瀯'
         },
         tooltip: {
             trigger: 'axis'
         },
         legend: {
-            data: ['最高气温', '最低气温']
+            data: ['鏈�楂樻皵娓�', '鏈�浣庢皵娓�']
         },
         toolbox: {
             show: true,
@@ -27,46 +26,46 @@ function drewlinegraph() {
             {
                 type: 'category',
                 boundaryGap: false,
-                data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
+                data: ['鍛ㄤ竴', '鍛ㄤ簩', '鍛ㄤ笁', '鍛ㄥ洓', '鍛ㄤ簲', '鍛ㄥ叚', '鍛ㄦ棩']
             }
         ],
         yAxis: [
             {
                 type: 'value',
                 axisLabel: {
-                    formatter: '{value} °C'
+                    formatter: '{value} 掳C'
                 }
             }
         ],
         series: [
             {
-                name: '最高气温',
+                name: '鏈�楂樻皵娓�',
                 type: 'line',
                 data: [11, 11, 15, 13, 12, 13, 10],
                 markPoint: {
                     data: [
-                        {type: 'max', name: '最大值'},
-                        {type: 'min', name: '最小值'}
+                        {type: 'max', name: '鏈�澶у��'},
+                        {type: 'min', name: '鏈�灏忓��'}
                     ]
                 },
                 markLine: {
                     data: [
-                        {type: 'average', name: '平均值'}
+                        {type: 'average', name: '骞冲潎鍊�'}
                     ]
                 }
             },
             {
-                name: '最低气温',
+                name: '鏈�浣庢皵娓�',
                 type: 'line',
                 data: [1, -2, 2, 5, 3, 2, 0],
                 markPoint: {
                     data: [
-                        {name: '周最低', value: -2, xAxis: 1, yAxis: -1.5}
+                        {name: '鍛ㄦ渶浣�', value: -2, xAxis: 1, yAxis: -1.5}
                     ]
                 },
                 markLine: {
                     data: [
-                        {type: 'average', name: '平均值'}
+                        {type: 'average', name: '骞冲潎鍊�'}
                     ]
                 }
             }
@@ -74,80 +73,3 @@ function drewlinegraph() {
     };
     myChart.setOption(option);
 }
-=======
-function drewlinegraph() {
-    var myChart = echarts.init(document.getElementById('main'));
-    option = {
-        title: {
-            text: '未来一周气温变化',
-            subtext: '纯属虚构'
-        },
-        tooltip: {
-            trigger: 'axis'
-        },
-        legend: {
-            data: ['最高气温', '最低气温']
-        },
-        toolbox: {
-            show: true,
-            feature: {
-                mark: {show: true},
-                dataView: {show: true, readOnly: false},
-                magicType: {show: true, type: ['line', 'bar']},
-                restore: {show: true},
-                saveAsImage: {show: true}
-            }
-        },
-        calculable: true,
-        xAxis: [
-            {
-                type: 'category',
-                boundaryGap: false,
-                data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
-            }
-        ],
-        yAxis: [
-            {
-                type: 'value',
-                axisLabel: {
-                    formatter: '{value} °C'
-                }
-            }
-        ],
-        series: [
-            {
-                name: '最高气温',
-                type: 'line',
-                data: [11, 11, 15, 13, 12, 13, 10],
-                markPoint: {
-                    data: [
-                        {type: 'max', name: '最大值'},
-                        {type: 'min', name: '最小值'}
-                    ]
-                },
-                markLine: {
-                    data: [
-                        {type: 'average', name: '平均值'}
-                    ]
-                }
-            },
-            {
-                name: '最低气温',
-                type: 'line',
-                data: [1, -2, 2, 5, 3, 2, 0],
-                markPoint: {
-                    data: [
-                        {name: '周最低', value: -2, xAxis: 1, yAxis: -1.5}
-                    ]
-                },
-                markLine: {
-                    data: [
-                        {type: 'average', name: '平均值'}
-                    ]
-                }
-            }
-        ]
-    };
-    myChart.setOption(option);
-}
->>>>>>> 24af9601e3b6e1b5d54236b1a7231dd310981382

@@ -1,11 +1,10 @@
-<<<<<<< HEAD
 function dbtgraph() {
     var myChart = echarts.init(document.getElementById('main'));
 
     var option = {
         title : {
-            text: '伊布 vs 罗纳尔多（yb vs lned）',
-            subtext: '纯属虚构'
+            text: '浼婂竷 vs 缃楃撼灏斿锛坹b vs lned锛�',
+            subtext: '绾睘铏氭瀯'
         },
         tooltip : {
             trigger: 'axis'
@@ -14,7 +13,7 @@ function dbtgraph() {
             orient : 'vertical',
             x : 'right',
             y : 'bottom',
-            data:['伊布','罗纳尔多']
+            data:['浼婂竷','缃楃撼灏斿']
         },
         toolbox: {
             show : true,
@@ -25,97 +24,34 @@ function dbtgraph() {
         polar : [
             {
                 indicator : [
-                    { text: '头球（header）', max: 100},
-                    { text: '左脚（left foot）', max: 100},
-                    { text: '右脚（right foot）', max: 100},
-                    { text: '速度（speed）', max: 100},
-                    { text: '意识（consciousness）', max: 100},
-                    { text: '技术（technology）', max: 100}
+                    { text: '澶寸悆锛坔eader锛�', max: 100},
+                    { text: '宸﹁剼锛坙eft foot锛�', max: 100},
+                    { text: '鍙宠剼锛坮ight foot锛�', max: 100},
+                    { text: '閫熷害锛坰peed锛�', max: 100},
+                    { text: '鎰忚瘑锛坈onsciousness锛�', max: 100},
+                    { text: '鎶�鏈紙technology锛�', max: 100}
                 ]
             }
         ],
         calculable : true,
         series : [
             {
-                name: '伊布 vs 罗纳尔多（yb vs lned）',
+                name: '浼婂竷 vs 缃楃撼灏斿锛坹b vs lned锛�',
                 type: 'radar',
                 data : [
                     {
                         value : [80, 98, 100, 100, 100, 100],
-                        name : '伊布（yb）'
+                        name : '浼婂竷锛坹b锛�'
                     },
                     {
                         value : [90, 75, 100, 91, 100, 100],
-                        name : '罗纳尔多（lned）'
+                        name : '缃楃撼灏斿锛坙ned锛�'
                     }
                 ]
             }
         ]
     };
     myChart.setOption(option);
-    myChart.showLoading({text: '正在努力的读取数据中...'});
+    myChart.showLoading({text: '姝ｅ湪鍔姏鐨勮鍙栨暟鎹腑...'});
     myChart.hideLoading();
 }
-
-
-=======
-function dbtgraph() {
-    var myChart = echarts.init(document.getElementById('main'));
-
-    var option = {
-        title : {
-            text: '伊布 vs 罗纳尔多（yb vs lned）',
-            subtext: '纯属虚构'
-        },
-        tooltip : {
-            trigger: 'axis'
-        },
-        legend: {
-            orient : 'vertical',
-            x : 'right',
-            y : 'bottom',
-            data:['伊布','罗纳尔多']
-        },
-        toolbox: {
-            show : true,
-            feature : {
-                saveAsImage : {show: true}
-            }
-        },
-        polar : [
-            {
-                indicator : [
-                    { text: '头球（header）', max: 100},
-                    { text: '左脚（left foot）', max: 100},
-                    { text: '右脚（right foot）', max: 100},
-                    { text: '速度（speed）', max: 100},
-                    { text: '意识（consciousness）', max: 100},
-                    { text: '技术（technology）', max: 100}
-                ]
-            }
-        ],
-        calculable : true,
-        series : [
-            {
-                name: '伊布 vs 罗纳尔多（yb vs lned）',
-                type: 'radar',
-                data : [
-                    {
-                        value : [80, 98, 100, 100, 100, 100],
-                        name : '伊布（yb）'
-                    },
-                    {
-                        value : [90, 75, 100, 91, 100, 100],
-                        name : '罗纳尔多（lned）'
-                    }
-                ]
-            }
-        ]
-    };
-    myChart.setOption(option);
-    myChart.showLoading({text: '正在努力的读取数据中...'});
-    myChart.hideLoading();
-}
-
-
->>>>>>> 24af9601e3b6e1b5d54236b1a7231dd310981382
